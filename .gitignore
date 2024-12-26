@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+
+# IDE config files
+.idea/
+.vscode/
+
+# React.js build output
+build/
+
+# Cache files
+npm-debug.log*
+yarn-error.log*
+.cache/
+.next/
+.expo/
+.nuxt/
+
+# Test results
+coverage/
+tests/
+__tests__/
+
+# Other ignored files
+.DS_Store
+Thumbs.db
+.log
+.temp
