@@ -1,4 +1,5 @@
 import "./App.css";
+import chef from "./assets/images/chef.jpg";
 
 function Header({name, year}) {
   return (
@@ -13,7 +14,7 @@ const items = [
   "Dal Bhaat chokha",
   "Dal Pithi",
   "Dal Makhni",
-  "Aalu paratha"
+  "Litti Chokha"
 ];
 
 const dishObjects = items.map((item, index) => ({
@@ -23,11 +24,14 @@ const dishObjects = items.map((item, index) => ({
 
 function Main({dishes}) {
   return (
-    <ul>
-      {dishes.map((dish) => (
-        <li style={{ listStyleType: "none" }} key={dish.id}>{dish.title}</li>
-      ))}
-    </ul>
+    <>
+      <img src={chef} height={200} alt="A photo of an Indian chef." />
+      <ul>
+        {dishes.map((dish) => (
+          <li style={{ listStyleType: "none" }} key={dish.id}>{dish.title}</li>
+        ))}
+      </ul>
+    </>
   );
 }
 
