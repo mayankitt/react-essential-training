@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import chef from "./assets/images/chef.jpg";
 
@@ -13,8 +14,9 @@ function Header({name, year}) {
 const items = [
   "Dal Bhaat chokha",
   "Dal Pithi",
-  "Dal Makhni",
-  "Litti Chokha"
+  "Dahi Choora",
+  "Litti Chokha",
+  "Dal bhaat Tarkaari"
 ];
 
 const dishObjects = items.map((item, index) => ({
@@ -36,14 +38,19 @@ function Main({dishes}) {
 }
 
 function App() {
+  const [status, setStatus] = useState(true);
   return (
-    <div>
+    <>
       <Header name="Mayank" year={new Date().getFullYear()}/>
       <main>
         <h2>We serve the most delicious food around!</h2>
         <Main dishes={dishObjects} />
       </main>
-    </div>
+      <footer>
+        <h3>The restaurant is currently {status ? "open" : "closed"}.</h3>
+        <button onClick={() => setStatus(!status)}>{status ? "Close" : "Open"} Restaurant</button>
+      </footer>
+    </>
   );
 }
 
